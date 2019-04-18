@@ -1,8 +1,5 @@
-﻿namespace KidClothesShop.Core.Entities
+﻿namespace KidClothesShop.Core.ValueObjects
 {
-    /// <summary>
-    /// [Value Object]
-    /// </summary>
     public class Address
     {
         public string HouseNumber { get; private set; }

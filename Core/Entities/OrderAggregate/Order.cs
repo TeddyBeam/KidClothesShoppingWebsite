@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using KidClothesShop.Core.ValueObjects;
 
 namespace KidClothesShop.Core.Entities
 {
@@ -15,6 +16,17 @@ namespace KidClothesShop.Core.Entities
 
         // Required by EF.
         private Order() {  }
+
+        public Order(string customerId, Address shipAddress, List<OrderDetails> orderDetails)
+            : this(customerId, DateTimeOffset.Now, shipAddress, orderDetails) { }
+
+        public Order(string customerId, DateTimeOffset orderDate, Address shipAddress, List<OrderDetails> orderDetails)
+        {
+            CustomerId = customerId;
+            OrderDate = orderDate;
+            ShipAddress = shipAddress;
+            this.orderDetails = orderDetails;
+        }
 
         public decimal TotalPrice()
         {

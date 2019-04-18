@@ -1,7 +1,6 @@
-﻿namespace KidClothesShop.Core.Entities
+﻿namespace KidClothesShop.Core.ValueObjects
 {
     /// <summary>
-    /// [Value Object]
     /// Represents a snapshot of the product that was odered.
     /// If product details change, details of the item that was part of a completed order should not be changed.
     /// </summary>

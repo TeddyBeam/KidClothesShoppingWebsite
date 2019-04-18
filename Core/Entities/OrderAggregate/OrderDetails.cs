@@ -1,4 +1,6 @@
-﻿namespace KidClothesShop.Core.Entities
+﻿using KidClothesShop.Core.ValueObjects;
+
+namespace KidClothesShop.Core.Entities
 {
     public class OrderDetails : BaseEntity
     {
