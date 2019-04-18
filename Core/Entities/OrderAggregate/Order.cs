@@ -2,11 +2,13 @@
 using System.Linq;
 using System.Collections.Generic;
 using KidClothesShop.Core.ValueObjects;
+using KidClothesShop.Core.Enums;
 
 namespace KidClothesShop.Core.Entities
 {
     public class Order : BaseEntity
     {
+        public OrderStatus Status { get; set; }
         public string CustomerId { get; private set; }
         public DateTimeOffset OrderDate { get; private set; } = DateTimeOffset.Now;
         public Address ShipAddress { get; private set; }
