@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace KidClothesShop.Core.Entities.OrderAggregate
+namespace KidClothesShop.Core.Entities
 {
     public class Order : BaseEntity
     {

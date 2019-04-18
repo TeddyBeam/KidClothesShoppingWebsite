@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace KidClothesShop.Core.Entities.OrderAggregate
+﻿namespace KidClothesShop.Core.Entities
 {
     /// <summary>
     /// [Value Object]

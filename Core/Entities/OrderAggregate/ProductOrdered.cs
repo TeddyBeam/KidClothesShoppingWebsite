@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KidClothesShop.Core.Entities.OrderAggregate
+﻿namespace KidClothesShop.Core.Entities
 {
     /// <summary>
     /// [Value Object]
