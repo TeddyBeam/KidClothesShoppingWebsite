@@ -8,6 +8,7 @@ namespace KidClothesShop.Infrastructure.Data
 {
     public class KidClothesShopDBContext : DbContext
     {
+        public DbSet<Basket> Baskets { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -19,6 +20,7 @@ namespace KidClothesShop.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Basket>(ConfigureBasket);
             builder.Entity<Order>(ConfigureOrder);
             builder.Entity<OrderDetails>(ConfigureOrderDetails);
             builder.Entity<Product>(ConfigureProduct);
@@ -28,6 +30,12 @@ namespace KidClothesShop.Infrastructure.Data
 
             builder.Entity<Address>(ConfigureAddress);
             builder.Entity<ProductOrdered>(ConfigureProductOrdered);
+        }
+
+        private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
+        {
+            var navigation = builder.Metadata.FindNavigation(nameof(Basket.Details));
+            navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
         }
 
         private void ConfigureOrder(EntityTypeBuilder<Order> builder)
