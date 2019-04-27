@@ -9,11 +9,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using KidClothesShop.Infrastructure.Identity;
+using KidClothesShop.Infrastructure.Data;
 
-namespace Web
+namespace KidClothesShop.Web
 {
     public class Startup
     {
@@ -34,11 +35,15 @@ namespace Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            // Add Main DbContext.
+            services.AddDbContext<KidClothesShopDBContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MainConnection")));
+
+            // Add Identity DbContext.
+            services.AddDbContext<KidClothesShopUserDBContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("UsersConnection")));
             services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<KidClothesShopUserDBContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
