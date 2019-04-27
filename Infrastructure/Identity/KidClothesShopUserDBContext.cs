@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System;
 
 namespace KidClothesShop.Infrastructure.Identity
 {
