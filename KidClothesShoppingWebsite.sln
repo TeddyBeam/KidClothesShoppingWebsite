@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KidClothesShop.Core", "Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KidClothesShop.Infrastructure", "Infrastructure\KidClothesShop.Infrastructure.csproj", "{1465161F-3246-4F8B-B50F-352B3D91F398}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{99E99DB0-8A9A-4628-AABD-D2A8B6A26271}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KidClothesShop.Web", "Web\KidClothesShop.Web.csproj", "{99E99DB0-8A9A-4628-AABD-D2A8B6A26271}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
