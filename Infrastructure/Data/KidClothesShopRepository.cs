@@ -16,17 +16,17 @@ namespace KidClothesShop.Infrastructure.Data
             this.dbContext = dbContext;
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T> SelectByIdAsync(int id)
         {
             return await dbContext.Set<T>().FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<T>> ListAllAsync()
+        public async Task<IReadOnlyList<T>> SelectAllAsync()
         {
             return await dbContext.Set<T>().ToListAsync();
         }
 
-        public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+        public async Task<IReadOnlyList<T>> SelectAsync(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).ToListAsync();
         }
