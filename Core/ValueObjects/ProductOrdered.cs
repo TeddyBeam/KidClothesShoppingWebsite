@@ -6,14 +6,14 @@
     /// </summary>
     public class ProductOrdered
     {
-        public string ProductId { get; private set; }
+        public int ProductId { get; private set; }
         public string ProductName { get; private set; }
         public string PictureUri { get; private set; }
 
         // Required by EF.
         private ProductOrdered() { }
 
-        public ProductOrdered(string productId, string productName, string pictureUri)
+        public ProductOrdered(int productId, string productName, string pictureUri)
         {
             // TODO: Validate parameters.
 
